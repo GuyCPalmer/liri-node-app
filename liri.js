@@ -61,8 +61,8 @@ request(queryURL, function (error, response, body) {
 
 //twitterThis
 function twitterThis() {
-    var twitter = require("twitter");
-    var client = new twitter({
+    var tw = require("twitter");
+    var client = new tw({
         consumer_key: keys.twitter.consumer_key,
         consumer_secret: keys.twitter.consumer_secret,
         access_token_key: keys.twitter.access_token_key,
