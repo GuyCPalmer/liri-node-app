@@ -12,13 +12,13 @@ function movieThis(action, nodeArgs) {
     //for else
     for (var i = 3; i < nodeArgs.length; i++) {
         if (i < 3 && i < nodeArgs.length) {
-            movieName = movieName + "" + nodeArgs[i];
+            movieName = movieName + "+" + nodeArgs[i];
         } else {
             movieName += nodeArgs[i];
         }
     }
     if (movieName == "") {
-        movieName = "Mrs. Doubtfire"
+        movieName = "Mrs.+Doubtfire"
     }
 }
 
@@ -56,6 +56,7 @@ request(queryURL, function (error, response, body) {
         }
     }
 });
+}
 //movieThis
 
 //twitterThis
