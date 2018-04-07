@@ -5,11 +5,12 @@ let request = require("request");
 var nodeArgs = process.argv;
 var action = nodeArgs[2].toLowerCase();
 
-//movieThis
+//movieThis 
+
 function movieThis(action, nodeArgs) {
     //variable for movie name
-    var movieName = "";
-    //for else
+   var movieName = "";
+    //for if else
     for (var i = 3; i < nodeArgs.length; i++) {
         if (i < 3 && i < nodeArgs.length) {
             movieName = movieName + "+" + nodeArgs[i];
@@ -20,7 +21,7 @@ function movieThis(action, nodeArgs) {
     if (movieName == "") {
         movieName = "Mrs.+Doubtfire"
     }
-}
+
 
 //run OMDB API request with movie title using API key
 var queryURL = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=aa1abc76"
@@ -60,7 +61,7 @@ request(queryURL, function (error, response, body) {
 //movieThis
 
 //twitterThis
-function twitterThis() {
+function twitterThat() {
     var tw = require("twitter");
     var client = new tw({
         consumer_key: keys.twitter.consumer_key,
@@ -122,7 +123,7 @@ if (action == "do-what-it-says") {
             if (action == "movie-this") {
                 movieThis(action, nodeArgs);
             } else if (action == "my-tweets") {
-                twitterThis();
+                twitterThat();
             }
         } 
     });
@@ -130,5 +131,5 @@ if (action == "do-what-it-says") {
     if (action == "movie-this") {
         movieThis(action, nodeArgs);
     } else if (action == "my-tweets") {
-    twitterThis();
+    twitterThat();
     }
